@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — Atlas des éclipses solaires</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; line-height: 1.6; color: #1a1a1a; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  .updated { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.2rem; border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; }
+  ul { padding-left: 1.3rem; }
+  li { margin-bottom: 0.4rem; }
+  code { background: #f2f2f2; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
+  .highlight { background: #f5f9ff; border-left: 3px solid #3b6fd1; padding: 0.8rem 1rem; border-radius: 4px; }
+  a { color: #3b6fd1; }
+</style>
+</head>
+<body>
+
+<h1>Politique de confidentialité</h1>
+<p class="updated">Application « Atlas des éclipses solaires » (package Android <code>pyrate.eclipse</code>) — dernière mise à jour : 7 août 2026</p>
+
+<p>Cette page décrit quelles données l'application collecte, pourquoi, et comment elles sont traitées. Le principe général : <strong>le strict minimum nécessaire au fonctionnement de la fonction de mesure collaborative de la totalité</strong>, rien n'est vendu ni partagé à des fins publicitaires.</p>
+
+<h2>Ce que l'application collecte</h2>
+<p>Uniquement si vous activez la fonction de mesure de totalité (caméra + GPS), au moment d'une éclipse :</p>
+<ul>
+  <li><strong>Position GPS</strong> (latitude, longitude, précision, altitude) au moment de l'observation.</li>
+  <li><strong>Un nombre</strong> : l'écart en secondes entre l'instant de totalité mesuré localement par l'appareil (via la luminosité captée par la caméra) et l'instant prédit par le calcul théorique — <strong>aucune image, photo ou vidéo n'est jamais envoyée</strong>, l'analyse de la caméra reste entièrement locale sur votre téléphone.</li>
+  <li><strong>Un identifiant anonyme</strong>, une chaîne aléatoire générée localement par l'application (pas un identifiant matériel, pas un compte) et stockée uniquement sur votre appareil ; il sert seulement à éviter les doublons de mesure, pas à vous identifier personnellement.</li>
+  <li>Des métadonnées techniques de la mesure : horodatage, version de l'application, indicateurs de qualité (ex. exposition verrouillée).</li>
+</ul>
+
+<div class="highlight">
+Aucun compte utilisateur n'existe dans l'application. Aucune donnée n'est collectée si vous n'utilisez pas la fonction de mesure de totalité — consulter la carte ou l'éphéméride d'éclipses ne transmet rien.
+</div>
+
+<h2>Pourquoi ces données sont collectées</h2>
+<p>Ces mesures, envoyées par les participants présents sur la bande de totalité au même moment, sont combinées par un filtrage statistique (médiane et écart absolu médian) pour affiner collectivement, en temps réel, la précision du modèle de position de la Lune — une démarche de science participative. Chaque téléphone recalcule localement ce résultat collectif ; aucun traitement centralisé n'exploite les données à d'autres fins.</p>
+
+<h2>Où sont stockées ces données</h2>
+<p>Les mesures sont stockées dans une base Firestore (Google Cloud / Firebase). Les mesures agrégées sont lisibles publiquement (c'est ce qui permet le calcul collaboratif en temps réel sur tous les appareils), mais ne contiennent ni nom, ni e-mail, ni aucun identifiant permettant de remonter à une personne réelle.</p>
+
+<h2>Autorisations demandées par l'application</h2>
+<ul>
+  <li><strong>Caméra</strong> : détecter localement la chute de luminosité pendant la totalité. Ne sert jamais à prendre ou enregistrer une photo/vidéo.</li>
+  <li><strong>Position (GPS)</strong> : calculer l'heure exacte de la totalité à votre emplacement et associer votre mesure à la bonne éclipse.</li>
+  <li><strong>Notifications</strong> : rappels locaux avant le début d'une éclipse (générés et affichés uniquement sur votre appareil, aucun serveur ne vous envoie de notification push).</li>
+  <li><strong>Internet</strong> : envoyer/recevoir les mesures collaboratives et synchroniser l'heure serveur.</li>
+</ul>
+
+<h2>Ce que l'application ne fait pas</h2>
+<ul>
+  <li>Pas de publicité, pas de SDK publicitaire, pas de suivi (tracking) à des fins marketing.</li>
+  <li>Pas de vente ni de partage de données à des tiers.</li>
+  <li>Pas de compte, pas de mot de passe, pas de profilage.</li>
+  <li>Pas d'envoi de photo, vidéo, ou flux caméra en dehors de l'appareil.</li>
+</ul>
+
+<h2>Vos droits</h2>
+<p>Comme aucune donnée n'est associée à votre identité réelle, il n'est pas possible de retrouver "vos" mesures individuellement à partir d'une demande — l'identifiant anonyme n'est connu que de votre propre appareil. Si vous avez une question ou une préoccupation concernant ces données, vous pouvez contacter le développeur à l'adresse ci-dessous.</p>
+
+<h2>Enfants</h2>
+<p>L'application n'est pas spécifiquement destinée aux enfants et ne collecte pas sciemment de données visant à les identifier.</p>
+
+<h2>Modifications de cette politique</h2>
+<p>Cette page pourra être mise à jour si de nouvelles fonctionnalités impliquant des données personnelles sont ajoutées. La date de mise à jour en haut de page reflète la dernière révision.</p>
+
+<h2>Contact</h2>
+<p>Développeur indépendant — <a href="mailto:leodutrion64@gmail.com">leodutrion64@gmail.com</a></p>
+
+</body>
+</html>
