@@ -1,0 +1,1109 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas des éclipses lunaires</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<style>
+  @font-face {
+    font-family: 'Fraunces Eclipse';
+    src: url(data:font/woff2;base64,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) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #0a0e1a;
+    --bg-2: #0d1220;
+    --surface: #131a2c;
+    --surface-2: #1a2338;
+    --surface-3: #212c46;
+    --ocean: #182238;
+    --land: #d9d0bd;
+    --land-line: #766c56;
+    --graticule: rgba(217, 208, 189, 0.09);
+    --ink: #eef1f7;
+    --ink-dim: #93a0bd;
+    --ink-faint: #5c6786;
+    --accent: #c1602f;
+    --accent-bright: #e8935a;
+    --accent-dim: #7a3d1e;
+    --shade-r: 32; --shade-g: 42; --shade-b: 74;
+    --shade-alpha: 0.40;
+    --line: rgba(238, 241, 247, 0.10);
+    --line-strong: rgba(238, 241, 247, 0.18);
+    --shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
+    color-scheme: dark;
+  }
+
+  :root[data-theme="light"] {
+    --bg: #eef1f6;
+    --bg-2: #e7ebf2;
+    --surface: #ffffff;
+    --surface-2: #eef1f7;
+    --surface-3: #e2e7f0;
+    --ocean: #cddcec;
+    --land: #f5efe1;
+    --land-line: #a99f88;
+    --graticule: rgba(90, 80, 60, 0.10);
+    --ink: #161c2c;
+    --ink-dim: #545f7a;
+    --ink-faint: #8891a8;
+    --accent: #ab441c;
+    --accent-bright: #8a3414;
+    --accent-dim: #e7c3ac;
+    --shade-r: 58; --shade-g: 74; --shade-b: 120;
+    --shade-alpha: 0.16;
+    --line: rgba(22, 28, 44, 0.10);
+    --line-strong: rgba(22, 28, 44, 0.18);
+    --shadow: 0 20px 50px -24px rgba(30,40,70,0.35);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #eef1f6;
+      --bg-2: #e7ebf2;
+      --surface: #ffffff;
+      --surface-2: #eef1f7;
+      --surface-3: #e2e7f0;
+      --ocean: #cddcec;
+      --land: #f5efe1;
+      --land-line: #a99f88;
+      --graticule: rgba(90, 80, 60, 0.10);
+      --ink: #161c2c;
+      --ink-dim: #545f7a;
+      --ink-faint: #8891a8;
+      --accent: #ab441c;
+      --accent-bright: #8a3414;
+      --accent-dim: #e7c3ac;
+      --shade-r: 58; --shade-g: 74; --shade-b: 120;
+      --shade-alpha: 0.16;
+      --line: rgba(22, 28, 44, 0.10);
+      --line-strong: rgba(22, 28, 44, 0.18);
+      --shadow: 0 20px 50px -24px rgba(30,40,70,0.35);
+      color-scheme: light;
+    }
+  }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; height: 100%; overscroll-behavior: none; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    height: 100%;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .display {
+    font-family: 'Fraunces Eclipse', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--accent-bright);
+  }
+  a { color: inherit; }
+  .crosslink { color: var(--ink-faint); font-size: 12.5px; text-decoration: none; border-bottom: 1px dotted var(--ink-faint); }
+  .crosslink:hover { color: var(--accent-bright); border-color: var(--accent-bright); }
+
+  /* ---- Map (full-bleed background) ---- */
+  #map { position: fixed; inset: 0; background: var(--ocean); }
+  .leaflet-container { background: var(--ocean); font-family: inherit; }
+  .leaflet-control-attribution {
+    background: rgba(0,0,0,0.35) !important;
+    color: var(--ink-dim) !important;
+    font-size: 10px !important;
+    backdrop-filter: blur(2px);
+  }
+  .leaflet-control-attribution a { color: var(--ink-dim) !important; }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--surface) !important; color: var(--ink) !important; }
+  .leaflet-popup-content { font-size: 12.5px; }
+
+  /* ---- Floating top bar ---- */
+  .topbar {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
+    left: 12px;
+    right: 12px;
+    z-index: 500;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .search-pill {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 4px 6px 4px 14px;
+    box-shadow: var(--shadow);
+    min-width: 0;
+  }
+  .search-pill svg { flex: 0 0 auto; color: var(--ink-faint); }
+  .search-pill input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--ink);
+    font-size: 14.5px;
+    padding: 9px 0;
+  }
+  .search-pill input::placeholder { color: var(--ink-faint); }
+  .search-pill button {
+    appearance: none;
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: var(--surface-2);
+    color: var(--ink-dim);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .search-pill button:hover { color: var(--accent-bright); }
+  .search-pill button:disabled { opacity: 0.5; cursor: default; }
+
+  .fab {
+    appearance: none;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--ink-dim);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+  }
+  .fab:hover { color: var(--ink); border-color: var(--accent); }
+
+  .locate-fab {
+    position: fixed;
+    right: 12px;
+    z-index: 500;
+    bottom: calc(var(--sheet-peek, 172px) + 16px);
+    font-size: 18px;
+    transition: bottom 0.28s ease;
+  }
+
+  .offline-badge {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 64px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 480;
+    background: var(--surface-2);
+    border: 1px solid var(--line-strong);
+    color: var(--ink-dim);
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+  }
+  .offline-badge[hidden] { display: none; }
+
+  .local-visibility {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 64px);
+    left: 12px;
+    right: 12px;
+    z-index: 470;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--ink-dim);
+    display: none;
+    max-width: 360px;
+  }
+  .local-visibility.show { display: block; }
+  .local-visibility strong { color: var(--ink); }
+  .local-visibility.visible-yes { border-color: var(--accent-dim); }
+
+  /* ---- Bottom sheet ---- */
+  .sheet {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 600;
+    background: var(--surface);
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -12px 40px -12px rgba(0,0,0,0.45);
+    max-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.28s ease;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    border: 1px solid var(--line);
+    border-bottom: none;
+  }
+  .sheet.collapsed { max-height: 172px; }
+  .sheet.collapsed .sheet-body { opacity: 0; pointer-events: none; }
+  .sheet-handle {
+    appearance: none; border: none; background: none;
+    display: flex; justify-content: center; padding: 10px 0 2px;
+    cursor: pointer; flex: 0 0 auto; width: 100%;
+  }
+  .sheet-handle .bar { width: 36px; height: 4px; border-radius: 999px; background: var(--line-strong); }
+  .sheet-header {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    padding: 2px 18px 14px; flex: 0 0 auto;
+  }
+  .sheet-body {
+    overflow-y: auto;
+    padding: 0 18px 18px;
+    transition: opacity 0.15s ease;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-btn {
+    appearance: none; flex: 0 0 auto;
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink);
+    font-size: 20px; line-height: 1; cursor: pointer;
+    display: grid; place-items: center;
+  }
+  .nav-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent-bright); }
+  .nav-btn:disabled { opacity: 0.35; cursor: default; }
+  .nav-center { text-align: center; min-width: 0; flex: 1 1 auto; }
+  .nav-center .eyebrow { justify-content: center; }
+  .nav-center h2 { margin: 4px 0 4px; font-size: clamp(19px, 5.4vw, 27px); text-transform: capitalize; }
+  .nav-sub { color: var(--ink-dim); font-size: 12.5px; }
+  .nav-sub .mono { color: var(--ink-faint); }
+
+  .jump-row {
+    display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+    margin: 4px 0 16px; font-size: 12.5px; color: var(--ink-faint);
+  }
+  .jump-row label { white-space: nowrap; }
+  .jump-row select {
+    max-width: 220px; padding: 7px 8px; border-radius: 7px;
+    border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink); font-size: 13px;
+  }
+  .jump-row input[type="number"] {
+    width: 74px; padding: 7px 8px; border-radius: 7px;
+    border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink);
+    font-family: ui-monospace, monospace; font-size: 13px; -moz-appearance: textfield;
+  }
+  .jump-row input::-webkit-outer-spin-button, .jump-row input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .jump-row input:focus, .jump-row select:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .jump-row button {
+    appearance: none; border: 1px solid var(--line-strong); border-radius: 7px;
+    background: var(--surface-2); color: var(--ink-dim); padding: 7px 12px; font-size: 12.5px; cursor: pointer;
+  }
+  .jump-row button:hover { color: var(--ink); border-color: var(--accent); }
+
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 14px; margin: 0 0 16px; font-size: 12px; color: var(--ink-dim);
+  }
+  .legend .item { display: flex; align-items: center; gap: 6px; }
+  .legend .swatch { width: 20px; height: 13px; border-radius: 3px; border: 1px solid var(--line-strong); flex: 0 0 auto; }
+  .legend .swatch.full { background: rgba(var(--shade-r), var(--shade-g), var(--shade-b), calc(var(--shade-alpha) * 1.8)); }
+  .legend .swatch.partial { background: rgba(var(--shade-r), var(--shade-g), var(--shade-b), var(--shade-alpha)); }
+  .legend .line-sample { width: 20px; height: 0; border-top: 2px solid var(--accent-bright); }
+
+  .detail {
+    padding-top: 16px; border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px;
+  }
+  .detail h3 { margin: 0 0 10px; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); font-weight: 600; }
+  .contacts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+  .contacts li { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; padding: 4px 0; border-bottom: 1px dashed var(--line); }
+  .contacts li:last-child { border-bottom: none; }
+  .contacts .label { color: var(--ink-dim); }
+  .contacts .label.peak { color: var(--accent-bright); font-weight: 600; }
+  .contacts .time { color: var(--ink); text-align: right; }
+  .stat-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+  .stat-list li { display: flex; justify-content: space-between; font-size: 13.5px; gap: 10px; }
+  .stat-list .label { color: var(--ink-dim); }
+  .local-note { color: var(--ink-faint); font-size: 12px; margin-top: 10px; line-height: 1.5; }
+
+  .method-disclosure { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--ink-faint); }
+  .method-disclosure summary { cursor: pointer; color: var(--ink-dim); font-weight: 600; list-style: none; }
+  .method-disclosure summary::-webkit-details-marker { display: none; }
+  .method-disclosure summary::before { content: '☰  '; }
+  .method-disclosure p { line-height: 1.6; margin: 10px 0 0; }
+  .method-disclosure .crosslink { display: inline-block; margin-top: 10px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .nav-btn, .fab, .jump-row button, .sheet, .locate-fab { transition-property: background, color, border-color, max-height, bottom; transition-duration: 0.15s, 0.15s, 0.15s, 0.28s, 0.28s; transition-timing-function: ease; }
+  }
+
+  /* ---- Wide screens: side panel instead of bottom sheet ---- */
+  @media (min-width: 760px) {
+    .sheet {
+      left: auto; right: 16px; top: calc(env(safe-area-inset-top, 0px) + 76px); bottom: 16px;
+      width: 380px; max-height: none; border-radius: 18px; border-bottom: 1px solid var(--line);
+    }
+    .sheet.collapsed { max-height: none; }
+    .sheet.collapsed .sheet-body { opacity: 1; pointer-events: auto; }
+    .sheet-handle { display: none; }
+    .locate-fab { bottom: 16px; right: 412px; }
+    .topbar { right: 412px; }
+  }
+</style>
+
+<div id="map"></div>
+
+<div class="topbar">
+  <div class="search-pill">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input type="text" id="placeSearch" placeholder="Rechercher un lieu (ville, pays…)" autocomplete="off" />
+    <button id="placeSearchBtn" type="button" aria-label="Chercher">→</button>
+  </div>
+  <button class="fab" id="themeToggle" title="Changer de thème" aria-label="Changer de thème">
+    <svg id="themeIcon" width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+<span class="offline-badge" id="offlineBadge" hidden>📡 Hors ligne — visibilité affichée sans fond de carte</span>
+<div class="local-visibility" id="localVisibility"></div>
+
+<button class="fab locate-fab" id="geolocBtn" type="button" title="Utiliser ma position" aria-label="Utiliser ma position">📍</button>
+
+<div class="sheet collapsed" id="sheet">
+  <button class="sheet-handle" id="sheetHandle" aria-label="Agrandir ou réduire les détails" aria-expanded="false">
+    <span class="bar"></span>
+  </button>
+
+  <div class="sheet-header">
+    <button class="nav-btn" id="prevBtn" aria-label="Éclipse précédente">‹</button>
+    <div class="nav-center">
+      <div class="eyebrow" id="eclEyebrow">—</div>
+      <h2 class="display" id="eclDate">—</h2>
+      <div class="nav-sub" id="eclSub">—</div>
+    </div>
+    <button class="nav-btn" id="nextBtn" aria-label="Éclipse suivante">›</button>
+    <span id="detailBadge" hidden></span>
+  </div>
+
+  <div class="sheet-body">
+    <div class="jump-row">
+      <label for="yearJump">Aller vers l'année</label>
+      <input type="number" id="yearJump" min="-2000" max="3000" placeholder="2026" />
+      <button id="jumpBtn">Aller</button>
+      <button id="todayBtn">Aujourd'hui</button>
+    </div>
+
+    <div class="legend">
+      <span class="item"><span class="swatch full"></span>Lune visible pendant toute l'éclipse</span>
+      <span class="item"><span class="swatch partial"></span>Lune visible seulement en partie (lever/coucher pendant l'éclipse)</span>
+      <span class="item"><span class="line-sample"></span>Position de la Lune au maximum</span>
+    </div>
+
+    <div class="detail" id="detailGrid">
+      <div>
+        <h3>Contacts (UTC)</h3>
+        <ul class="contacts" id="contactsList"></ul>
+      </div>
+      <div>
+        <h3>Caractéristiques</h3>
+        <ul class="stat-list" id="statList"></ul>
+        <div class="local-note" id="localNote"></div>
+      </div>
+    </div>
+
+    <details class="method-disclosure">
+      <summary>Méthode</summary>
+      <p>Les instants de pleine lune et les éléments d'éclipse sont calculés avec les algorithmes de Jean Meeus (<em>Astronomical Algorithms</em>), avec correction ΔT pour la conversion Temps Terrestre → Temps Universel. La zone de visibilité approxime le point sub-lunaire par l'antipode du point sub-solaire au même instant — une approximation à quelques degrés près, suffisante à l'échelle de cette carte.</p>
+      <a class="crosslink" href="eclipses-solaires.html">Voir les éclipses solaires →</a>
+    </details>
+  </div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ============================= THEME ============================= */
+  var root = document.documentElement;
+  var themeToggle = document.getElementById('themeToggle');
+  function currentTheme() {
+    var stored = localStorage.getItem('eclipse-theme');
+    if (stored) return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function applyTheme(t) {
+    root.setAttribute('data-theme', t);
+    localStorage.setItem('eclipse-theme', t);
+  }
+  applyTheme(currentTheme());
+  themeToggle.addEventListener('click', function () {
+    var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(t);
+    setMapTheme(t);
+  });
+
+  /* ============================= MATH HELPERS ============================= */
+  var D2R = Math.PI / 180, R2D = 180 / Math.PI;
+  function sinD(d) { return Math.sin(d * D2R); }
+  function cosD(d) { return Math.cos(d * D2R); }
+  function norm360(x) { x = x % 360; return x < 0 ? x + 360 : x; }
+
+  /* ============================= JULIAN DATE ============================= */
+  function calendarToJD(y, m, d) {
+    if (m <= 2) { y -= 1; m += 12; }
+    var A = Math.floor(y / 100);
+    var B = 2 - A + Math.floor(A / 4);
+    return Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + d + B - 1524.5;
+  }
+  function jdToCalendar(jd) {
+    jd += 0.5;
+    var Z = Math.floor(jd);
+    var F = jd - Z;
+    var A = Z;
+    if (Z >= 2299161) {
+      var alpha = Math.floor((Z - 1867216.25) / 36524.25);
+      A = Z + 1 + alpha - Math.floor(alpha / 4);
+    }
+    var B = A + 1524;
+    var C = Math.floor((B - 122.1) / 365.25);
+    var D = Math.floor(365.25 * C);
+    var E = Math.floor((B - D) / 30.6001);
+    var day = B - D - Math.floor(30.6001 * E) + F;
+    var month = E < 14 ? E - 1 : E - 13;
+    var year = month > 2 ? C - 4716 : C - 4715;
+    return { year: year, month: month, day: day };
+  }
+  function jdToDate(jd) {
+    var cal = jdToCalendar(jd);
+    var dayInt = Math.floor(cal.day);
+    var frac = cal.day - dayInt;
+    var ms = Date.UTC(cal.year, cal.month - 1, dayInt) + Math.round(frac * 86400000);
+    return new Date(ms);
+  }
+
+  /* ============================= DELTA T (Espenak/Meeus polynomials, seconds) ============================= */
+  function deltaT(y) {
+    var u, t, dt;
+    if (y < -500) { u = (y - 1820) / 100; dt = -20 + 32 * u * u; }
+    else if (y < 500) {
+      u = y / 100;
+      dt = 10583.6 - 1014.41 * u + 33.78311 * Math.pow(u,2) - 5.952053 * Math.pow(u,3)
+         - 0.1798452 * Math.pow(u,4) + 0.022174192 * Math.pow(u,5) + 0.0090316521 * Math.pow(u,6);
+    } else if (y < 1600) {
+      u = (y - 1000) / 100;
+      dt = 1574.2 - 556.01 * u + 71.23472 * Math.pow(u,2) + 0.319781 * Math.pow(u,3)
+         - 0.8503463 * Math.pow(u,4) - 0.005050998 * Math.pow(u,5) + 0.0083572073 * Math.pow(u,6);
+    } else if (y < 1700) {
+      t = y - 1600; dt = 120 - 0.9808 * t - 0.01532 * t * t + t*t*t / 7129;
+    } else if (y < 1800) {
+      t = y - 1700;
+      dt = 8.83 + 0.1603 * t - 0.0059285 * t*t + 0.00013336 * t*t*t - Math.pow(t,4) / 1174000;
+    } else if (y < 1860) {
+      t = y - 1800;
+      dt = 13.72 - 0.332447 * t + 0.0068612 * Math.pow(t,2) + 0.0041116 * Math.pow(t,3)
+         - 0.00037436 * Math.pow(t,4) + 0.0000121272 * Math.pow(t,5) - 0.0000001699 * Math.pow(t,6) + 0.000000000875 * Math.pow(t,7);
+    } else if (y < 1900) {
+      t = y - 1860;
+      dt = 7.62 + 0.5737 * t - 0.251754 * Math.pow(t,2) + 0.01680668 * Math.pow(t,3)
+         - 0.0004473624 * Math.pow(t,4) + Math.pow(t,5) / 233174;
+    } else if (y < 1920) {
+      t = y - 1900;
+      dt = -2.79 + 1.494119 * t - 0.0598939 * Math.pow(t,2) + 0.0061966 * Math.pow(t,3) - 0.000197 * Math.pow(t,4);
+    } else if (y < 1941) {
+      t = y - 1920; dt = 21.20 + 0.84493 * t - 0.076100 * t*t + 0.0020936 * t*t*t;
+    } else if (y < 1961) {
+      t = y - 1950; dt = 29.07 + 0.407 * t - t*t/233 + t*t*t/2547;
+    } else if (y < 1986) {
+      t = y - 1975; dt = 45.45 + 1.067 * t - t*t/260 - t*t*t/718;
+    } else if (y < 2005) {
+      t = y - 2000;
+      dt = 63.86 + 0.3345 * t - 0.060374 * Math.pow(t,2) + 0.0017275 * Math.pow(t,3)
+         + 0.000651814 * Math.pow(t,4) + 0.00002373599 * Math.pow(t,5);
+    } else if (y < 2050) {
+      t = y - 2000; dt = 62.92 + 0.32217 * t + 0.005589 * t*t;
+    } else if (y < 2150) {
+      dt = -20 + 32 * Math.pow((y - 1820) / 100, 2) - 0.5628 * (2150 - y);
+    } else {
+      u = (y - 1820) / 100; dt = -20 + 32 * u * u;
+    }
+    return dt;
+  }
+
+  /* ============================= MEEUS FULL MOON + LUNAR ECLIPSE ============================= */
+  function fullMoonEclipse(k) {
+    var T = k / 1236.85, T2 = T*T, T3 = T2*T, T4 = T3*T;
+
+    var JDE0 = 2451550.09766 + 29.530588861*k + 0.00015437*T2 - 0.000000150*T3 + 0.00000000073*T4;
+    var E = 1 - 0.002516*T - 0.0000074*T2;
+    var M  = norm360(2.5534 + 29.10535670*k - 0.0000014*T2 - 0.00000011*T3);
+    var Mp = norm360(201.5643 + 385.81693528*k + 0.0107582*T2 + 0.00001238*T3 - 0.000000058*T4);
+    var F  = norm360(160.7108 + 390.67050284*k - 0.0016118*T2 - 0.00000227*T3 + 0.000000011*T4);
+    var Om = norm360(124.7746 - 1.56375588*k + 0.0020672*T2 + 0.00000215*T3);
+
+    var corr =
+      -0.40614*sinD(Mp) + 0.17302*E*sinD(M) + 0.01608*sinD(2*Mp) + 0.01039*sinD(2*F)
+      +0.00739*E*sinD(Mp-M) - 0.00514*E*sinD(Mp+M) + 0.00208*E*E*sinD(2*M)
+      -0.00111*sinD(Mp-2*F) - 0.00057*sinD(Mp+2*F) + 0.00056*E*sinD(2*Mp+M)
+      -0.00042*sinD(3*Mp) + 0.00042*E*sinD(M+2*F) + 0.00038*E*sinD(M-2*F)
+      -0.00024*E*sinD(2*Mp-M) - 0.00017*sinD(Om) - 0.00007*sinD(Mp+2*M)
+      +0.00004*sinD(2*Mp-2*F) + 0.00004*sinD(3*M) + 0.00003*sinD(Mp+M-2*F)
+      +0.00003*sinD(2*Mp+2*F) - 0.00003*sinD(Mp+M+2*F) + 0.00003*sinD(Mp-M+2*F)
+      -0.00002*sinD(Mp-M-2*F) - 0.00002*sinD(3*Mp+M) + 0.00002*sinD(4*Mp);
+
+    var A1 = norm360(299.77 + 0.107408*k - 0.009173*T2);
+    var A2 = norm360(251.88 + 0.016321*k);
+    var A3 = norm360(251.83 + 26.651886*k);
+    var A4 = norm360(349.42 + 36.412478*k);
+    var A5 = norm360(84.66 + 18.206239*k);
+    var A6 = norm360(141.74 + 53.303771*k);
+    var A7 = norm360(207.14 + 2.453732*k);
+    var A8 = norm360(154.84 + 7.306860*k);
+    var A9 = norm360(34.52 + 27.261239*k);
+    var A10 = norm360(207.19 + 0.121824*k);
+    var A11 = norm360(291.34 + 1.844379*k);
+    var A12 = norm360(161.72 + 24.198154*k);
+    var A13 = norm360(239.56 + 25.513099*k);
+    var A14 = norm360(331.55 + 3.592518*k);
+
+    corr += 0.000325*sinD(A1) + 0.000165*sinD(A2) + 0.000164*sinD(A3) + 0.000126*sinD(A4)
+          + 0.000110*sinD(A5) + 0.000062*sinD(A6) + 0.000060*sinD(A7) + 0.000056*sinD(A8)
+          + 0.000047*sinD(A9) + 0.000042*sinD(A10) + 0.000040*sinD(A11) + 0.000037*sinD(A12)
+          + 0.000035*sinD(A13) + 0.000023*sinD(A14);
+
+    var JDE = JDE0 + corr;
+
+    /* Moon's perpendicular distance from the Earth's shadow axis, in Earth radii:
+       Meeus ch. 54's own eclipse formula, gamma = (P*cosF + Q*sinF) * (1 - 0.0048*|cosF|),
+       reusing the M/Mp/F/E already computed above for JDE. (A previous version
+       approximated this as moonDistance*sin(eclipticLatitude) via the ch. 47 lunar-
+       position series - a plausible-looking shortcut, but not actually what determines
+       distance from the *shadow axis*, and it was off by up to ~0.18 in umbral magnitude
+       against documented eclipses, e.g. 2022-11-08 came out 1.18 instead of the real 1.36.
+       Verified against Wikipedia/NASA reference data for 2011, 2022 and 2025 - see
+       tests/lunar-reference.test.js.) */
+    var P = 0.2070*sinD(M) + 0.0024*sinD(2*M) - 0.0392*sinD(Mp) + 0.0116*sinD(2*Mp)
+          - 0.0073*E*sinD(M+Mp) + 0.0067*E*sinD(M-Mp) + 0.0118*sinD(2*F);
+    var Q = 5.2207 - 0.0048*E*cosD(M) + 0.0020*cosD(2*M) - 0.3299*cosD(Mp)
+          - 0.0060*E*cosD(M+Mp) + 0.0041*E*cosD(M-Mp);
+    var absCosF = Math.abs(cosD(F));
+    var gamma = (P*cosD(F) + Q*sinD(F)) * (1 - 0.0048*absCosF);
+    var u = 0.0059 + 0.0046*E*cosD(M) - 0.0182*cosD(Mp) + 0.0004*cosD(2*Mp) - 0.0005*cosD(M+Mp);
+
+    var L = 0.2725;
+    var rho1 = 1.2848 + u;
+    var rho2 = 0.7404 - u;
+    var Rpen = rho1 + L;
+    var Rumb = rho2 + L;
+    var Rtot = rho2 - L;
+    var ag = Math.abs(gamma);
+
+    var penumbralMag = (Rpen - ag) / (2*L);
+    if (penumbralMag <= 0.0005) return null;
+
+    var umbralMag = (Rumb - ag) / (2*L);
+    var type;
+    if (ag < Rtot) type = 'total';
+    else if (ag < Rumb) type = 'partial';
+    else type = 'penumbral';
+
+    var n = 0.5458 + 0.0400*cosD(Mp);
+    function semiDur(R) {
+      var v = R*R - gamma*gamma;
+      return v > 0 ? 60/n*Math.sqrt(v) : null;
+    }
+    var durP = semiDur(Rpen);
+    var durU = (type !== 'penumbral') ? semiDur(Rumb) : null;
+    var durT = (type === 'total') ? semiDur(Rtot) : null;
+
+    return {
+      k: k, JDE: JDE, gamma: gamma, type: type,
+      penumbralMag: penumbralMag, umbralMag: umbralMag,
+      durP: durP, durU: durU, durT: durT, Mp: Mp
+    };
+  }
+
+  function computeEclipse(k) {
+    var ecl = fullMoonEclipse(k);
+    if (!ecl) return null;
+    var approxYear = jdToCalendar(ecl.JDE).year;
+    var dtSec = deltaT(approxYear);
+    ecl.JD_UT = ecl.JDE - dtSec / 86400;
+    ecl.date = jdToDate(ecl.JD_UT);
+    return ecl;
+  }
+
+  /* find the nearest eclipse at or after k0 in the given direction (+1/-1), stepping one lunation at a time */
+  function findEclipse(k0, direction, includeSelf) {
+    var start = includeSelf ? 0 : direction;
+    for (var i = start; Math.abs(i) <= 42; i += direction) {
+      var ecl = computeEclipse(k0 + i);
+      if (ecl) return ecl;
+    }
+    return null;
+  }
+
+  function eclipsesInYear(year) {
+    var kEst = (year - 2000) * 12.3685;
+    var kStart = Math.floor(kEst) - 13;
+    var out = [], seen = {};
+    for (var i = 0; i < 27; i++) {
+      var k = kStart + i + 0.5;
+      var ecl = computeEclipse(k);
+      if (!ecl) continue;
+      if (ecl.date.getUTCFullYear() === year) {
+        var key = Math.round(ecl.JDE * 10);
+        if (!seen[key]) { seen[key] = true; out.push(ecl); }
+      }
+    }
+    out.sort(function (a, b) { return a.JDE - b.JDE; });
+    return out;
+  }
+
+  /* ============================= SUN / SUB-LUNAR POSITION ============================= */
+  function sunPosition(jdUT) {
+    var n = jdUT - 2451545.0;
+    var L = norm360(280.460 + 0.9856474 * n);
+    var g = norm360(357.528 + 0.9856003 * n);
+    var lambda = norm360(L + 1.915 * sinD(g) + 0.020 * sinD(2*g));
+    var eps = 23.439 - 0.0000004 * n;
+    var ra = norm360(Math.atan2(cosD(eps) * sinD(lambda), cosD(lambda)) * R2D);
+    var dec = Math.asin(sinD(eps) * sinD(lambda)) * R2D;
+    var gst = norm360(280.46061837 + 360.98564736629 * n);
+    return { ra: ra, dec: dec, gst: gst };
+  }
+
+  function subLunarPoint(jdUT) {
+    var s = sunPosition(jdUT);
+    var subsolarLon = norm360(s.ra - s.gst);
+    if (subsolarLon > 180) subsolarLon -= 360;
+    var lon = subsolarLon + 180;
+    if (lon > 180) lon -= 360;
+    var lat = -s.dec;
+    return { lat: lat, lon: lon };
+  }
+
+  /* ============================= MAP GEOMETRY ============================= */
+  function terminatorLatAt(lat0, lon0, lon) {
+    var lat0r = lat0 * D2R;
+    var s = Math.sin(lat0r);
+    if (Math.abs(s) < 1e-6) s = (s < 0 ? -1 : 1) * 1e-6;
+    var dLon = (lon - lon0) * D2R;
+    var phi = Math.atan(-Math.cos(lat0r) * Math.cos(dLon) / s);
+    return phi * R2D;
+  }
+
+  function terminatorRing(lat0, lon0) {
+    var steps = 180, pts = [];
+    for (var i = 0; i <= steps; i++) {
+      var lon = -180 + i * (360 / steps);
+      var phi = terminatorLatAt(lat0, lon0, lon);
+      pts.push([phi, lon]);
+    }
+    return pts;
+  }
+
+  /* the moonlit hemisphere (Moon above the horizon), closed off at whichever pole it wraps around */
+  function hemisphereRing(lat0, lon0) {
+    var pts = terminatorRing(lat0, lon0);
+    var poleLat = lat0 >= 0 ? 90 : -90;
+    return pts.concat([[poleLat, 180], [poleLat, -180]]);
+  }
+
+  /* great-circle angular distance in degrees; a point sees the Moon above the horizon
+     whenever it is within 90° of the sub-lunar point */
+  function angularSepDeg(lat1, lon1, lat2, lon2) {
+    var p1 = lat1 * D2R, p2 = lat2 * D2R, dl = (lon2 - lon1) * D2R;
+    var cosd = Math.sin(p1) * Math.sin(p2) + Math.cos(p1) * Math.cos(p2) * Math.cos(dl);
+    return Math.acos(Math.max(-1, Math.min(1, cosd))) * R2D;
+  }
+
+  /* ============================= MAP (Leaflet) ============================= */
+  var map = L.map('map', { worldCopyJump: true, zoomControl: false, attributionControl: false }).setView([20, 10], 2);
+  L.control.attribution({ position: 'topright', prefix: false }).addTo(map);
+  var tileLayers = {
+    dark: L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
+      maxZoom: 18, subdomains: 'abcd'
+    }),
+    light: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
+      maxZoom: 18, subdomains: 'abcd'
+    })
+  };
+  var currentTileLayer = null;
+  function setMapTheme(theme) {
+    var wanted = theme === 'light' ? tileLayers.light : tileLayers.dark;
+    if (currentTileLayer === wanted) return;
+    if (currentTileLayer) map.removeLayer(currentTileLayer);
+    wanted.addTo(map);
+    currentTileLayer = wanted;
+  }
+  setMapTheme(currentTheme());
+
+  function mapColors() {
+    var cs = getComputedStyle(root);
+    function v(name) { return cs.getPropertyValue(name).trim(); }
+    return {
+      shade: 'rgb(' + v('--shade-r') + ',' + v('--shade-g') + ',' + v('--shade-b') + ')',
+      shadeAlpha: parseFloat(v('--shade-alpha')),
+      accentDim: v('--accent-dim'),
+      accentBright: v('--accent-bright'),
+      accent: v('--accent'),
+      bg: v('--bg')
+    };
+  }
+
+  var mapLayers = { shadeP1: null, shadeP4: null, terminator: null, subLunar: null };
+  function clearMapLayers() {
+    Object.keys(mapLayers).forEach(function (k) {
+      if (mapLayers[k]) { map.removeLayer(mapLayers[k]); mapLayers[k] = null; }
+    });
+  }
+  function updateMapLayers(subP1, subP4, subG) {
+    clearMapLayers();
+    var c = mapColors();
+    mapLayers.shadeP1 = L.polygon(hemisphereRing(subP1.lat, subP1.lon), {
+      color: c.accentDim, weight: 0.8, opacity: 0.5, fillColor: c.shade, fillOpacity: c.shadeAlpha, interactive: false
+    }).addTo(map);
+    mapLayers.shadeP4 = L.polygon(hemisphereRing(subP4.lat, subP4.lon), {
+      color: c.accentDim, weight: 0.8, opacity: 0.5, fillColor: c.shade, fillOpacity: c.shadeAlpha, interactive: false
+    }).addTo(map);
+    mapLayers.terminator = L.polyline(terminatorRing(subG.lat, subG.lon), {
+      color: c.accentBright, weight: 2, lineCap: 'round', interactive: false
+    }).addTo(map);
+    mapLayers.subLunar = L.layerGroup([
+      L.circleMarker([subG.lat, subG.lon], { radius: 10, color: c.accentBright, weight: 1, fill: false, opacity: 0.6, interactive: false }),
+      L.circleMarker([subG.lat, subG.lon], { radius: 5.5, color: c.bg, weight: 1.5, fillColor: c.accent, fillOpacity: 1, interactive: false })
+        .bindTooltip('Point sub-lunaire (la Lune au zénith)')
+    ]).addTo(map);
+  }
+
+  /* ============================= FORMATTING ============================= */
+  var MONTHS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  var TYPE_LABEL = { total: 'Éclipse totale', partial: 'Éclipse partielle', penumbral: 'Éclipse pénombrale' };
+
+  function fmtDate(date) {
+    return date.getUTCDate() + ' ' + MONTHS[date.getUTCMonth()] + ' ' + date.getUTCFullYear();
+  }
+  function fmtTime(date) {
+    var h = String(date.getUTCHours()).padStart(2, '0');
+    var m = String(date.getUTCMinutes()).padStart(2, '0');
+    return h + ':' + m;
+  }
+  function fmtDur(minTotal) {
+    if (minTotal == null) return '—';
+    var h = Math.floor(minTotal / 60), m = Math.round(minTotal % 60);
+    if (m === 60) { h += 1; m = 0; }
+    return (h > 0 ? h + ' h ' : '') + m + ' min';
+  }
+
+  /* ============================= STATE + RENDER ============================= */
+  var state = { current: null };
+  var els = {
+    eclEyebrow: document.getElementById('eclEyebrow'),
+    eclDate: document.getElementById('eclDate'),
+    eclSub: document.getElementById('eclSub'),
+    prevBtn: document.getElementById('prevBtn'),
+    nextBtn: document.getElementById('nextBtn'),
+    detailBadge: document.getElementById('detailBadge'),
+    contacts: document.getElementById('contactsList'),
+    stats: document.getElementById('statList'),
+    localNote: document.getElementById('localNote'),
+    yearJump: document.getElementById('yearJump')
+  };
+
+  function showEclipse(ecl) {
+    if (!ecl) return;
+    state.current = ecl;
+
+    var yearList = eclipsesInYear(ecl.date.getUTCFullYear());
+    var idxInYear = 0;
+    for (var i = 0; i < yearList.length; i++) {
+      if (Math.abs(yearList[i].k - ecl.k) < 1e-6) { idxInYear = i; break; }
+    }
+
+    els.eclEyebrow.textContent = TYPE_LABEL[ecl.type];
+    els.eclDate.textContent = fmtDate(ecl.date);
+    els.eclSub.innerHTML = 'Maximum à <span class="mono">' + fmtTime(ecl.date) + ' UTC</span> · ' +
+      (idxInYear + 1) + ' / ' + yearList.length + ' en ' + ecl.date.getUTCFullYear();
+    els.detailBadge.innerHTML = '<strong>' + TYPE_LABEL[ecl.type] + '</strong>';
+
+    /* contact times */
+    var rows = [];
+    if (ecl.durP != null) rows.push(['P1 · entrée dans la pénombre', ecl.JD_UT - ecl.durP/1440]);
+    if (ecl.durU != null) rows.push(['U1 · entrée dans l\'ombre', ecl.JD_UT - ecl.durU/1440]);
+    if (ecl.durT != null) rows.push(['U2 · début de la totalité', ecl.JD_UT - ecl.durT/1440]);
+    rows.push(['Maximum de l\'éclipse', ecl.JD_UT, true]);
+    if (ecl.durT != null) rows.push(['U3 · fin de la totalité', ecl.JD_UT + ecl.durT/1440]);
+    if (ecl.durU != null) rows.push(['U4 · sortie de l\'ombre', ecl.JD_UT + ecl.durU/1440]);
+    if (ecl.durP != null) rows.push(['P4 · sortie de la pénombre', ecl.JD_UT + ecl.durP/1440]);
+    els.contacts.innerHTML = rows.map(function (r) {
+      var d = jdToDate(r[1]);
+      return '<li><span class="label' + (r[2] ? ' peak' : '') + '">' + r[0] + '</span><span class="time mono">' + fmtTime(d) + '</span></li>';
+    }).join('');
+
+    var statRows = [
+      ['Type', TYPE_LABEL[ecl.type]],
+      ['Magnitude pénombrale', ecl.penumbralMag.toFixed(3)],
+      ['Magnitude ombrale', ecl.umbralMag.toFixed(3)],
+      ['Gamma (γ)', ecl.gamma.toFixed(4)],
+      ['Durée totale (pénombre)', fmtDur(ecl.durP != null ? ecl.durP*2 : null)]
+    ];
+    if (ecl.durT != null) statRows.push(['Durée de la totalité', fmtDur(ecl.durT*2)]);
+    els.stats.innerHTML = statRows.map(function (r) {
+      return '<li><span class="label">' + r[0] + '</span><span class="mono">' + r[1] + '</span></li>';
+    }).join('');
+
+    try {
+      var localStr = jdToDate(ecl.JD_UT).toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'short' });
+      els.localNote.textContent = 'Dans votre fuseau horaire, le maximum a lieu le ' + localStr + '.';
+    } catch (e) { els.localNote.textContent = ''; }
+
+    /* map */
+    var jP1 = ecl.durP != null ? ecl.JD_UT - ecl.durP/1440 : ecl.JD_UT;
+    var jP4 = ecl.durP != null ? ecl.JD_UT + ecl.durP/1440 : ecl.JD_UT;
+    var subP1 = subLunarPoint(jP1);
+    var subP4 = subLunarPoint(jP4);
+    var subG = subLunarPoint(ecl.JD_UT);
+
+    updateMapLayers(subP1, subP4, subG);
+    map.fitBounds(L.latLngBounds(hemisphereRing(subG.lat, subG.lon)), { padding: [24, 24], maxZoom: 3 });
+    clearSearchMarker();
+    localVisEl.className = 'local-visibility';
+  }
+
+  function goTo(direction) {
+    if (!state.current) return;
+    var ecl = findEclipse(state.current.k, direction, false);
+    if (ecl) showEclipse(ecl);
+  }
+
+  /* ============================= EVENTS ============================= */
+  els.prevBtn.addEventListener('click', function () { goTo(-1); });
+  els.nextBtn.addEventListener('click', function () { goTo(1); });
+  document.addEventListener('keydown', function (e) {
+    if (e.target && (e.target.tagName === 'INPUT')) return;
+    if (e.key === 'ArrowLeft') goTo(-1);
+    if (e.key === 'ArrowRight') goTo(1);
+  });
+  document.getElementById('todayBtn').addEventListener('click', function () {
+    jumpToDate(new Date());
+  });
+  document.getElementById('jumpBtn').addEventListener('click', function () {
+    var y = parseInt(els.yearJump.value, 10);
+    if (!isNaN(y)) jumpToDate(new Date(Date.UTC(y, 5, 15)));
+  });
+  els.yearJump.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('jumpBtn').click();
+  });
+
+  function jumpToDate(jsDate) {
+    var jd = calendarToJD(jsDate.getUTCFullYear(), jsDate.getUTCMonth() + 1,
+      jsDate.getUTCDate() + jsDate.getUTCHours()/24 + jsDate.getUTCMinutes()/1440);
+    var k0 = Math.round((jd - 2451550.09766) / 29.530588861 - 0.5) + 0.5;
+    var ecl = findEclipse(k0, 1, true);
+    if (ecl) showEclipse(ecl);
+  }
+
+  /* swipe left/right on the eclipse navigator (not the map, which needs its own drag-to-pan) */
+  (function () {
+    var nav = document.querySelector('.sheet-header');
+    var startX = null, startY = null;
+    nav.addEventListener('touchstart', function (e) {
+      var t = e.changedTouches[0];
+      startX = t.clientX; startY = t.clientY;
+    }, { passive: true });
+    nav.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      var t = e.changedTouches[0];
+      var dx = t.clientX - startX, dy = t.clientY - startY;
+      startX = null;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) goTo(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  })();
+
+  /* ============================= LOCATION SEARCH ============================= */
+  var searchInput = document.getElementById('placeSearch');
+  var searchBtn = document.getElementById('placeSearchBtn');
+  var localVisEl = document.getElementById('localVisibility');
+  var searchMarker = null;
+
+  function clearSearchMarker() {
+    if (searchMarker) { map.removeLayer(searchMarker); searchMarker = null; }
+  }
+  function showLocalVisibility(html, cls) {
+    localVisEl.innerHTML = html;
+    localVisEl.className = 'local-visibility show' + (cls ? ' ' + cls : '');
+  }
+
+  /* the Moon is above a point's horizon whenever that point is within 90° of the
+     sub-lunar point — same great-circle test the shaded map regions are built from */
+  function computeLocalVisibility(lat, lon) {
+    if (!state.current) return null;
+    var ecl = state.current;
+    var jP1 = ecl.durP != null ? ecl.JD_UT - ecl.durP/1440 : ecl.JD_UT;
+    var jP4 = ecl.durP != null ? ecl.JD_UT + ecl.durP/1440 : ecl.JD_UT;
+    var subG = subLunarPoint(ecl.JD_UT);
+    var visibleAtMax = angularSepDeg(lat, lon, subG.lat, subG.lon) <= 90;
+    var visibleWholeTime = angularSepDeg(lat, lon, subLunarPoint(jP1).lat, subLunarPoint(jP1).lon) <= 90 &&
+      angularSepDeg(lat, lon, subLunarPoint(jP4).lat, subLunarPoint(jP4).lon) <= 90;
+    return { visibleAtMax: visibleAtMax, visibleWholeTime: visibleWholeTime };
+  }
+
+  function renderLocalVisibility(placeName, v) {
+    if (!v || !v.visibleAtMax) {
+      showLocalVisibility('<strong>' + placeName + '</strong> — la Lune est sous l\'horizon au maximum de cette éclipse, elle n\'y est pas visible.', 'visible-no');
+      return;
+    }
+    var extra = v.visibleWholeTime ? 'visible du début à la fin de l\'éclipse' : 'visible seulement en partie (lever ou coucher de Lune pendant l\'éclipse)';
+    showLocalVisibility('<strong>' + placeName + '</strong> — éclipse ' + TYPE_LABEL[state.current.type].toLowerCase() + ', ' + extra + '.', 'visible-yes');
+  }
+
+  function runPlaceSearch() {
+    var q = searchInput.value.trim();
+    if (!q) return;
+    searchBtn.disabled = true;
+    searchBtn.textContent = '…';
+    fetch('https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=' + encodeURIComponent(q))
+      .then(function (r) { return r.json(); })
+      .then(function (results) {
+        if (!results || !results.length) {
+          showLocalVisibility('Lieu introuvable. Essayez un nom plus précis.', 'visible-no');
+          return;
+        }
+        var r0 = results[0];
+        var lat = parseFloat(r0.lat), lon = parseFloat(r0.lon);
+        var placeName = r0.display_name.split(',').slice(0, 3).join(',');
+        clearSearchMarker();
+        searchMarker = L.marker([lat, lon]).addTo(map).bindPopup(placeName).openPopup();
+        map.flyTo([lat, lon], Math.max(map.getZoom(), 5));
+        renderLocalVisibility(placeName, computeLocalVisibility(lat, lon));
+      })
+      .catch(function () {
+        showLocalVisibility('Recherche impossible (vérifiez la connexion réseau).', 'visible-no');
+      })
+      .then(function () {
+        searchBtn.disabled = false;
+        searchBtn.textContent = '→';
+      });
+  }
+  searchBtn.addEventListener('click', runPlaceSearch);
+  searchInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') runPlaceSearch(); });
+
+  /* ============================= GEOLOCATION ============================= */
+  var geolocBtn = document.getElementById('geolocBtn');
+  if (!('geolocation' in navigator)) {
+    geolocBtn.disabled = true;
+    geolocBtn.title = 'Géolocalisation indisponible sur cet appareil';
+  }
+  geolocBtn.addEventListener('click', function () {
+    if (!('geolocation' in navigator)) return;
+    geolocBtn.disabled = true;
+    var originalLabel = geolocBtn.textContent;
+    geolocBtn.textContent = '…';
+    function reset() { geolocBtn.disabled = false; geolocBtn.textContent = originalLabel; }
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      var lat = pos.coords.latitude, lon = pos.coords.longitude;
+      clearSearchMarker();
+      searchMarker = L.marker([lat, lon]).addTo(map);
+      map.flyTo([lat, lon], Math.max(map.getZoom(), 6));
+      var v = computeLocalVisibility(lat, lon);
+      reset();
+      fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=' + lat + '&lon=' + lon)
+        .then(function (r) { return r.json(); })
+        .then(function (r) {
+          var name = (r && r.display_name) ? r.display_name.split(',').slice(0, 3).join(',') : 'Votre position';
+          searchMarker.bindPopup(name).openPopup();
+          renderLocalVisibility(name, v);
+        })
+        .catch(function () {
+          searchMarker.bindPopup('Votre position').openPopup();
+          renderLocalVisibility('Votre position', v);
+        });
+    }, function (err) {
+      reset();
+      var msg = 'Localisation impossible.';
+      if (err.code === err.PERMISSION_DENIED) msg = 'Localisation refusée — vous pouvez l\'autoriser dans les paramètres de l\'appli, ou utiliser la recherche par nom.';
+      showLocalVisibility(msg, 'visible-no');
+    }, { enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 });
+  });
+
+  /* init: nearest eclipse to now (upcoming if possible) */
+  jumpToDate(new Date());
+
+  /* ============================= ONLINE / OFFLINE ============================= */
+  var offlineBadge = document.getElementById('offlineBadge');
+  function applyConnectivity() {
+    var online = navigator.onLine;
+    offlineBadge.hidden = online;
+    if (online) {
+      setMapTheme(currentTheme());
+    } else if (currentTileLayer) {
+      map.removeLayer(currentTileLayer);
+      currentTileLayer = null;
+    }
+  }
+  window.addEventListener('online', applyConnectivity);
+  window.addEventListener('offline', applyConnectivity);
+  applyConnectivity();
+})();
+</script>
+
+<script>
+(function () {
+  "use strict";
+  var sheet = document.getElementById('sheet');
+  var handle = document.getElementById('sheetHandle');
+
+  function setExpanded(expanded) {
+    sheet.classList.toggle('collapsed', !expanded);
+    handle.setAttribute('aria-expanded', String(expanded));
+  }
+  handle.addEventListener('click', function () {
+    setExpanded(sheet.classList.contains('collapsed'));
+  });
+
+  /* swipe the handle up/down to expand/collapse, same gesture style as the eclipse-navigator swipe */
+  var startY = null;
+  handle.addEventListener('touchstart', function (e) {
+    startY = e.changedTouches[0].clientY;
+  }, { passive: true });
+  handle.addEventListener('touchend', function (e) {
+    if (startY === null) return;
+    var dy = e.changedTouches[0].clientY - startY;
+    startY = null;
+    if (Math.abs(dy) < 24) return;
+    setExpanded(dy < 0);
+  }, { passive: true });
+
+  /* keep the locate button riding just above the sheet's current height */
+  function updateSheetPeek() {
+    document.documentElement.style.setProperty('--sheet-peek', sheet.getBoundingClientRect().height + 'px');
+  }
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(updateSheetPeek).observe(sheet);
+  } else {
+    window.addEventListener('resize', updateSheetPeek);
+    sheet.addEventListener('transitionend', updateSheetPeek);
+  }
+  updateSheetPeek();
+})();
+</script>
