@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>AI Lab</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <h1>AI Lab</h1>
+  <p class="subtitle">Environnement local pour creer, tester et entrainer plusieurs IA a la tache, avec feedback bien/mal et reutilisation de bases.</p>
+
+  <div class="layout">
+    <div class="panel">
+      <h3>Taches</h3>
+      <div id="task-list" class="task-list"></div>
+    </div>
+
+    <div class="panel">
+      <h3 id="task-title">Choisissez une tache</h3>
+      <p id="task-description" class="subtitle"></p>
+      <div id="task-form"></div>
+      <div id="result" class="result" style="display:none"></div>
+      <div id="feedback-row" class="feedback-row" style="display:none">
+        <button class="btn-good" id="btn-good">Bien</button>
+        <button class="btn-bad" id="btn-bad">Mal</button>
+      </div>
+      <label id="note-label" style="display:none">Precision (optionnel)</label>
+      <input id="note-input" style="display:none" placeholder="ex: trop de bruit / il en manque" />
+      <div id="stats" class="stats"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Bases</h3>
+      <div id="base-list"></div>
+      <label>Enregistrer l'etat courant comme nouvelle base</label>
+      <input id="save-label" placeholder="nom de la base" />
+      <button class="primary" id="btn-save-base">Sauvegarder</button>
+      <label>Importer une base existante</label>
+      <input type="file" id="import-file" />
+      <button class="primary" id="btn-import-base">Importer</button>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

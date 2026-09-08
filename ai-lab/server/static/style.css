@@ -1,0 +1,144 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f1115;
+  --panel: #1a1d24;
+  --text: #e8e8e8;
+  --muted: #9aa0a8;
+  --accent: #5b8def;
+  --good: #3fb950;
+  --bad: #f85149;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  padding: 24px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr 280px;
+  gap: 16px;
+  align-items: start;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.task-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.task-list button.active {
+  border-color: var(--accent);
+  background: rgba(91, 141, 239, 0.15);
+}
+
+label {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #0d0f13;
+  color: var(--text);
+}
+
+button.primary {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.feedback-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.feedback-row button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-good { background: var(--good); }
+.btn-bad { background: var(--bad); }
+
+.result {
+  margin-top: 16px;
+  padding: 10px;
+  background: #0d0f13;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.result img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.base-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #2a2d34;
+  font-size: 13px;
+}
+
+.base-item.active { color: var(--accent); }
+
+.stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.stat {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #0d0f13;
+  font-size: 13px;
+}
