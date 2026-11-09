@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="It's Over 9000">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd23f"/>
+      <stop offset="1" stop-color="#ff6b1a"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#39ff9f" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#0bb36b" stop-opacity=".6"/>
+    </linearGradient>
+  </defs>
+  <!-- Emblème : lentille HUD hexagonale avec réticule -->
+  <g transform="translate(10 10)">
+    <polygon points="50,0 93,25 93,75 50,100 7,75 7,25" fill="none" stroke="url(#g)" stroke-width="6"/>
+    <polygon points="50,16 79,33 79,67 50,84 21,67 21,33" fill="url(#lens)"/>
+    <circle cx="50" cy="50" r="14" fill="none" stroke="#06120c" stroke-width="3"/>
+    <line x1="50" y1="26" x2="50" y2="38" stroke="#06120c" stroke-width="3"/>
+    <line x1="50" y1="62" x2="50" y2="74" stroke="#06120c" stroke-width="3"/>
+    <line x1="26" y1="50" x2="38" y2="50" stroke="#06120c" stroke-width="3"/>
+    <line x1="62" y1="50" x2="74" y2="50" stroke="#06120c" stroke-width="3"/>
+    <path d="M93 40 L112 30" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <!-- Texte -->
+  <text x="128" y="50" font-family="'Arial Black', Impact, sans-serif" font-size="26" font-weight="900" fill="#ffffff" letter-spacing="1">IT'S OVER</text>
+  <text x="126" y="102" font-family="'Arial Black', Impact, sans-serif" font-size="56" font-weight="900" fill="url(#g)" font-style="italic">9000<tspan fill="#ff6b1a" font-size="34" dy="-22">+</tspan></text>
+</svg>
